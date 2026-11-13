@@ -1,0 +1,63 @@
+body { font-family: Arial, sans-serif; margin: 0; color: #333; }
+
+/* Enlace para saltar al contenido: oculto hasta que recibe el foco */
+.saltar {
+  position: absolute; left: -9999px; top: 8px;
+  background: #152A1D; color: #F4EAD8; padding: 8px 16px; z-index: 10;
+}
+.saltar:focus { left: 8px; }
+
+/* Cabecera y menú */
+header { background: #152A1D; padding: 16px; }
+nav ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; gap: 16px; }
+nav a { color: #F4EAD8; }                      /* 12,75:1 sobre #152A1D (antes #4a6b55: 2,55:1) */
+nav a[aria-current="page"] { font-weight: bold; text-decoration: none; border-bottom: 2px solid #E6945A; }
+
+/* Contenido principal */
+main { padding: 16px; }
+
+/* Títulos */
+h1 { font-size: 32px; font-weight: bold; margin: 0; }
+h2 { font-size: 24px; font-weight: bold; margin: 24px 0 8px; }
+h3 { font-size: 18px; font-weight: bold; margin: 8px 0; }
+
+/* Párrafos */
+main p { color: #4d4d4d; }                     /* 8,45:1 sobre blanco (antes #aaaaaa: 2,32:1) */
+
+/* Fichas de bici: 300 px en pantallas de 700 px o más; por debajo, todo el ancho (coincide con sizes) */
+.bici { display: block; width: auto; }
+.bici img { display: block; width: 100%; height: auto; }
+@media (min-width: 700px) {
+  .bici { display: inline-block; width: 300px; vertical-align: top; }
+}
+
+/* Vídeo */
+figure { margin: 0; }
+video { max-width: 100%; height: auto; }
+figcaption { margin-top: 4px; font-size: 14px; color: #4d4d4d; }
+
+/* Tabla de tarifas: bordes con CSS en lugar de border="1" */
+.tarifas { border-collapse: collapse; }
+.tarifas caption { text-align: left; font-weight: bold; padding-bottom: 8px; }
+.tarifas th, .tarifas td { border: 1px solid #152A1D; padding: 6px 12px; }
+.tarifas thead th { background: #152A1D; color: #F4EAD8; }
+.tarifas tbody th { text-align: left; }
+.tarifas td { text-align: right; }
+.tarifas tfoot td { text-align: left; font-size: 14px; background: #F4EAD8; }
+
+/* Boletín */
+aside { background: #F4EAD8; padding: 12px; margin: 24px 16px 0; }
+aside label { display: block; margin-bottom: 4px; font-weight: bold; }
+aside input { padding: 6px; font: inherit; }
+.boton {
+  display: inline-block; background: #E6945A; color: #152A1D;   /* 6,34:1 (antes blanco: 2,4:1) */
+  padding: 8px 16px; border: 0; font: inherit; font-weight: bold; cursor: pointer;
+}
+
+/* Foco siempre visible (sustituye a "a:focus, input:focus { outline: none; }") */
+:focus-visible { outline: 3px solid #152A1D; outline-offset: 3px; }
+header :focus-visible, footer :focus-visible, .saltar:focus-visible { outline-color: #E6945A; }
+
+/* Pie */
+footer { background: #152A1D; color: #F4EAD8; padding: 12px; font-size: 12px; }   /* 12,75:1 (antes #2f4a38: 1,56:1) */
+footer p { margin: 0; }
