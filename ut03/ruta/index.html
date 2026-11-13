@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruta costera en bicicleta de montaña</title>
+  <meta name="description" content="Ruta de 18 km en bicicleta de montaña por caminos de tierra junto al mar: tramos, distancias, vídeo y avisos.">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<a class="saltar" href="#principal">Saltar al contenido principal</a>
+
+<header>
+  <p class="marca">Mis rutas en bici</p>
+  <nav>
+    <ul>
+      <li><a href="#recorrido">Recorrido</a></li>
+      <li><a href="#etapas">Etapas</a></li>
+      <li><a href="#video">Vídeo</a></li>
+      <li><a href="#avisos">Avisos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="principal">
+  <h1>Ruta costera en bicicleta de montaña</h1>
+  <p>Una ruta circular de 18 km en bicicleta de montaña por caminos de tierra entre matorral mediterráneo, con el mar a la vista casi todo el tiempo. Tiene alguna subida corta, pero se puede hacer en una mañana.</p>
+
+  <section id="recorrido">
+    <h2>El recorrido</h2>
+    <figure>
+      <img src="img/ruta-540.jpg"
+           srcset="img/ruta-360.jpg 360w, img/ruta-540.jpg 540w, img/ruta-723.jpg 723w"
+           sizes="(min-width: 700px) 600px, 100vw"
+           width="723" height="423" loading="lazy"
+           alt="Ciclista con casco y mochila bajando en bicicleta de montaña por un camino de tierra, con matorral a los lados y el mar azul al fondo">
+      <figcaption>Tramo de bajada hacia el mirador, con el mar al fondo.</figcaption>
+    </figure>
+    <p>El camino es de tierra compacta con algunas piedras sueltas en las bajadas. No hay sombra en casi todo el recorrido, así que es mejor salir temprano y llevar agua de sobra.</p>
+  </section>
+
+  <section id="etapas">
+    <h2>Etapas y distancias</h2>
+    <table class="datos">
+      <caption>Distancia, tiempo aproximado y dificultad de cada tramo</caption>
+      <thead>
+        <tr>
+          <th scope="col">Tramo</th>
+          <th scope="col">Distancia</th>
+          <th scope="col">Tiempo</th>
+          <th scope="col">Dificultad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Aparcamiento → Mirador</th>
+          <td>6 km</td>
+          <td>35 min</td>
+          <td>Media</td>
+        </tr>
+        <tr>
+          <th scope="row">Mirador → Cala</th>
+          <td>5 km</td>
+          <td>25 min</td>
+          <td>Baja</td>
+        </tr>
+        <tr>
+          <th scope="row">Cala → Aparcamiento</th>
+          <td>7 km</td>
+          <td>45 min</td>
+          <td>Media</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Total</th>
+          <td>18 km</td>
+          <td>1 h 45 min</td>
+          <td>Media</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <section id="video">
+    <h2>La ruta en vídeo</h2>
+    <figure>
+      <video controls preload="metadata" width="640" height="360" poster="img/poster.jpg">
+        <source src="media/ruta.mp4" type="video/mp4">
+        <track kind="captions" src="media/ruta.es.vtt" srclang="es" label="Español" default>
+        <p>Tu navegador no puede reproducir el vídeo. <a href="media/ruta.mp4">Descarga el vídeo de la ruta</a> (MP4, 12 segundos).</p>
+      </video>
+      <figcaption>Vídeo de 12 segundos del camino junto al mar, con subtítulos en español.</figcaption>
+    </figure>
+  </section>
+
+  <article>
+    <h2>Mi experiencia en la ruta</h2>
+    <p>Lo mejor de la ruta es la bajada hacia el mirador: el camino se abre y aparece el mar de golpe. La subida de vuelta desde la cala es la parte más dura, pero es corta y se puede hacer a ritmo tranquilo.</p>
+    <p>Recomiendo llevar casco, guantes, al menos un litro y medio de agua y una cámara de repuesto.</p>
+    <p>Publicado el <time datetime="2026-11-13">13 de noviembre de 2026</time>.</p>
+  </article>
+</main>
+
+<aside id="avisos">
+  <h2>Avisos de la ruta</h2>
+  <p>Déjame tu correo y te aviso si hay cortes o cambios en el recorrido.</p>
+  <form action="#" onsubmit="alert('¡Gracias! Te avisaremos.'); return false;">
+    <label for="correo">Correo electrónico</label>
+    <input type="email" id="correo" name="correo" placeholder="nombre@ejemplo.com" autocomplete="email" required>
+    <button type="submit">Avisarme</button>
+  </form>
+</aside>
+
+<footer>
+  <p>Rubén Rodríguez Pastor · 0373 Lenguajes de marcas · ASIR 1 · 2026</p>
+</footer>
+</body>
+</html>

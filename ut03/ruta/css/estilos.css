@@ -1,0 +1,48 @@
+/* Colores (todos los textos superan 4,5:1)
+   Fondo oscuro #1E3A2B · Crema #F6F1E7 · Texto #2b2b2b · Acento #E0A458 */
+body { font-family: Arial, sans-serif; margin: 0; color: #2b2b2b; background: #fff; line-height: 1.5; }
+
+/* Saltar al contenido: oculto hasta recibir el foco */
+.saltar { position: absolute; left: -9999px; top: 8px; background: #1E3A2B; color: #F6F1E7; padding: 8px 16px; z-index: 10; }
+.saltar:focus { left: 8px; }
+
+/* Cabecera y menú */
+header { background: #1E3A2B; color: #F6F1E7; padding: 16px; }
+.marca { margin: 0; font-size: 24px; font-weight: bold; }
+nav ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 16px; }
+nav a { color: #F6F1E7; }
+
+/* Contenido */
+main { padding: 16px; max-width: 900px; }
+h1 { font-size: 32px; margin: 0 0 8px; }
+h2 { font-size: 24px; margin: 32px 0 8px; }
+figure { margin: 0; }
+figcaption { font-size: 14px; color: #4d4d4d; margin-top: 4px; }
+
+/* Imagen responsiva: 600 px a partir de 700 px de pantalla, todo el ancho por debajo (igual que sizes) */
+figure img { display: block; width: 100%; height: auto; }
+@media (min-width: 700px) { #recorrido figure img { width: 600px; } }
+
+video { max-width: 100%; height: auto; }
+
+/* Tabla */
+.datos { border-collapse: collapse; }
+.datos caption { text-align: left; font-weight: bold; padding-bottom: 8px; }
+.datos th, .datos td { border: 1px solid #1E3A2B; padding: 6px 12px; }
+.datos thead th { background: #1E3A2B; color: #F6F1E7; }
+.datos tbody th, .datos tfoot th { text-align: left; }
+.datos tfoot { background: #F6F1E7; font-weight: bold; }
+
+/* Formulario */
+aside { background: #F6F1E7; padding: 16px; margin: 24px 16px; max-width: 868px; }
+label { display: block; font-weight: bold; margin-bottom: 4px; }
+input { font: inherit; padding: 6px; }
+button { font: inherit; font-weight: bold; background: #E0A458; color: #1E3A2B; border: 0; padding: 8px 16px; cursor: pointer; }
+
+/* Foco siempre visible */
+:focus-visible { outline: 3px solid #1E3A2B; outline-offset: 3px; }
+header :focus-visible, footer :focus-visible, .saltar:focus-visible { outline-color: #E0A458; }
+
+/* Pie */
+footer { background: #1E3A2B; color: #F6F1E7; padding: 12px 16px; font-size: 14px; }
+footer p { margin: 0; }
