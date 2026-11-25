@@ -1,0 +1,31 @@
+{
+  "aula": "Aula ASIR 1",
+  "actualizado": "2026-11-25",
+  "equipos": [
+    { "id": "EQ-01", "tipo": "router", "nombre": "Router de salida a Internet",
+      "marca": "Cisco", "modelo": "ISR 1111-4P",
+      "ip": "192.168.10.1", "mac": "00:1A:2B:3C:4D:01",
+      "ubicacion": "Armario rack del aula", "fecha_compra": "2022-09-05" },
+    { "id": "EQ-02", "tipo": "switch", "nombre": "Switch principal del aula",
+      "marca": "Cisco", "modelo": "Catalyst 2960-24TT",
+      "ip": "192.168.10.2", "mac": "00:1A:2B:3C:4D:02",
+      "ubicacion": "Armario rack del aula", "fecha_compra": "2022-09-05",
+      "puertos": 24 },
+    { "id": "EQ-03", "tipo": "punto_acceso", "nombre": "Punto de acceso Wi-Fi",
+      "marca": "TP-Link", "modelo": "EAP245",
+      "ip": "192.168.10.3", "mac": "50:C7:BF:11:22:03",
+      "ubicacion": "Techo, centro del aula", "fecha_compra": "2023-01-16" },
+    { "id": "EQ-04", "tipo": "servidor", "nombre": "Servidor de ficheros",
+      "marca": "Dell", "modelo": "PowerEdge T150",
+      "ip": "192.168.10.10", "mac": "B0:83:FE:AA:10:04",
+      "ubicacion": "Armario rack del aula", "fecha_compra": "2023-09-11" },
+    { "id": "EQ-05", "tipo": "servidor", "nombre": "Servidor de máquinas virtuales",
+      "marca": "HPE", "modelo": "ProLiant ML30 Gen10",
+      "ip": "192.168.10.11", "mac": "94:40:C9:BB:11:05",
+      "ubicacion": "Armario rack del aula", "fecha_compra": "2024-02-20" },
+    { "id": "EQ-06", "tipo": "impresora", "nombre": "Impresora de red",
+      "marca": "Brother", "modelo": "HL-L5100DN",
+      "ip": "192.168.10.20", "mac": "30:05:5C:CC:20:06",
+      "ubicacion": "Mesa del profesor", "fecha_compra": "2021-10-04" }
+  ]
+}

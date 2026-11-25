@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Inventario de los equipos de red del aula de ASIR 1 (datos de ejemplo) -->
+<inventario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="inventario.xsd"
+            aula="Aula ASIR 1" actualizado="2026-11-25">
+
+  <equipo id="EQ-01" tipo="router">
+    <nombre>Router de salida a Internet</nombre>
+    <modelo marca="Cisco">ISR 1111-4P</modelo>
+    <ip>192.168.10.1</ip>
+    <mac>00:1A:2B:3C:4D:01</mac>
+    <ubicacion>Armario rack del aula</ubicacion>
+    <fecha_compra>2022-09-05</fecha_compra>
+  </equipo>
+
+  <equipo id="EQ-02" tipo="switch">
+    <nombre>Switch principal del aula</nombre>
+    <modelo marca="Cisco">Catalyst 2960-24TT</modelo>
+    <ip>192.168.10.2</ip>
+    <mac>00:1A:2B:3C:4D:02</mac>
+    <ubicacion>Armario rack del aula</ubicacion>
+    <fecha_compra>2022-09-05</fecha_compra>
+    <puertos>24</puertos>
+  </equipo>
+
+  <equipo id="EQ-03" tipo="punto_acceso">
+    <nombre>Punto de acceso Wi-Fi</nombre>
+    <modelo marca="TP-Link">EAP245</modelo>
+    <ip>192.168.10.3</ip>
+    <mac>50:C7:BF:11:22:03</mac>
+    <ubicacion>Techo, centro del aula</ubicacion>
+    <fecha_compra>2023-01-16</fecha_compra>
+  </equipo>
+
+  <equipo id="EQ-04" tipo="servidor">
+    <nombre>Servidor de ficheros</nombre>
+    <modelo marca="Dell">PowerEdge T150</modelo>
+    <ip>192.168.10.10</ip>
+    <mac>B0:83:FE:AA:10:04</mac>
+    <ubicacion>Armario rack del aula</ubicacion>
+    <fecha_compra>2023-09-11</fecha_compra>
+  </equipo>
+
+  <equipo id="EQ-05" tipo="servidor">
+    <nombre>Servidor de máquinas virtuales</nombre>
+    <modelo marca="HPE">ProLiant ML30 Gen10</modelo>
+    <ip>192.168.10.11</ip>
+    <mac>94:40:C9:BB:11:05</mac>
+    <ubicacion>Armario rack del aula</ubicacion>
+    <fecha_compra>2024-02-20</fecha_compra>
+  </equipo>
+
+  <equipo id="EQ-06" tipo="impresora">
+    <nombre>Impresora de red</nombre>
+    <modelo marca="Brother">HL-L5100DN</modelo>
+    <ip>192.168.10.20</ip>
+    <mac>30:05:5C:CC:20:06</mac>
+    <ubicacion>Mesa del profesor</ubicacion>
+    <fecha_compra>2021-10-04</fecha_compra>
+  </equipo>
+
+</inventario>
