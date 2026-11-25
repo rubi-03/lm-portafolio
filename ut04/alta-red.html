@@ -1,22 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alta de usuario en la red del centro</title>
-  <link rel="stylesheet" href="css/cita.css">
-  <script src="js/alta-red.js" defer></script>
-</head>
-<body>
-  <header class="cabecera">
-    <p class="logo">Red del centro</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alta de usuario en la red del centro</title>
+    <link rel="stylesheet" href="css/cita.css" />
+    <script src="js/alta-red.js" defer></script>
+  </head>
+  <body>
+    <header class="cabecera">
+      <p class="logo">Red del centro</p>
+    </header>
 
-  <main>
-    <h1>Alta de usuario en la red del centro</h1>
-    <p>Los campos marcados con <span class="obligatorio" aria-hidden="true">*</span> son obligatorios.</p>
+    <main>
+      <h1>Alta de usuario en la red del centro</h1>
+      <p>
+        Los campos marcados con
+        <span class="obligatorio" aria-hidden="true">*</span> son obligatorios.
+      </p>
 
-    <!--
+      <!--
       MÉTODO: POST.
       - El formulario envía datos personales (nombre, NIA, fecha de nacimiento, teléfono)
         y una contraseña: con GET quedarían a la vista en la URL, el historial y los
@@ -25,108 +28,222 @@
         recargar la página ni al guardar la URL en favoritos.
       - POST no cifra los datos: en un entorno real la página debe servirse por HTTPS.
     -->
-    <form id="formAlta" action="https://httpbin.org/post" method="post">
+      <form id="formAlta" action="https://httpbin.org/post" method="post">
+        <fieldset>
+          <legend>Datos del alumno</legend>
 
-      <fieldset>
-        <legend>Datos del alumno</legend>
+          <div class="campo">
+            <label for="nombre"
+              >Nombre y apellidos
+              <span class="obligatorio" aria-hidden="true">*</span></label
+            >
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              minlength="3"
+              maxlength="80"
+              autocomplete="name"
+            />
+          </div>
 
-        <div class="campo">
-          <label for="nombre">Nombre y apellidos <span class="obligatorio" aria-hidden="true">*</span></label>
-          <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="80" autocomplete="name">
-        </div>
+          <div class="campo">
+            <label for="nia"
+              >NIA (número de identificación del alumno)
+              <span class="obligatorio" aria-hidden="true">*</span></label
+            >
+            <!-- pattern propio 1: exactamente 8 cifras -->
+            <input
+              type="text"
+              id="nia"
+              name="nia"
+              required
+              inputmode="numeric"
+              pattern="[0-9]{8}"
+              maxlength="8"
+              title="Exactamente 8 cifras, sin letras ni espacios"
+              aria-describedby="ayudaNia"
+            />
+            <small id="ayudaNia" class="ayuda"
+              >8 cifras. Ejemplo: 20261234</small
+            >
+          </div>
 
-        <div class="campo">
-          <label for="nia">NIA (número de identificación del alumno) <span class="obligatorio" aria-hidden="true">*</span></label>
-          <!-- pattern propio 1: exactamente 8 cifras -->
-          <input type="text" id="nia" name="nia" required inputmode="numeric"
-                 pattern="[0-9]{8}" maxlength="8"
-                 title="Exactamente 8 cifras, sin letras ni espacios"
-                 aria-describedby="ayudaNia">
-          <small id="ayudaNia" class="ayuda">8 cifras. Ejemplo: 20261234</small>
-        </div>
+          <div class="campo">
+            <label for="nacimiento"
+              >Fecha de nacimiento
+              <span class="obligatorio" aria-hidden="true">*</span></label
+            >
+            <input
+              type="date"
+              id="nacimiento"
+              name="nacimiento"
+              required
+              min="1940-01-01"
+              aria-describedby="ayudaNac"
+            />
+            <small id="ayudaNac" class="ayuda"
+              >Hay que tener al menos 16 años.</small
+            >
+          </div>
 
-        <div class="campo">
-          <label for="nacimiento">Fecha de nacimiento <span class="obligatorio" aria-hidden="true">*</span></label>
-          <input type="date" id="nacimiento" name="nacimiento" required
-                 min="1940-01-01" aria-describedby="ayudaNac">
-          <small id="ayudaNac" class="ayuda">Hay que tener al menos 16 años.</small>
-        </div>
+          <div class="campo">
+            <label for="correo"
+              >Correo del centro
+              <span class="obligatorio" aria-hidden="true">*</span></label
+            >
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              required
+              autocomplete="email"
+            />
+          </div>
 
-        <div class="campo">
-          <label for="correo">Correo del centro <span class="obligatorio" aria-hidden="true">*</span></label>
-          <input type="email" id="correo" name="correo" required autocomplete="email">
-        </div>
+          <div class="campo">
+            <label for="telefono">Teléfono de contacto</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              pattern="[6789][0-9]{8}"
+              maxlength="9"
+              title="9 cifras que empiecen por 6, 7, 8 o 9"
+            />
+          </div>
+        </fieldset>
 
-        <div class="campo">
-          <label for="telefono">Teléfono de contacto</label>
-          <input type="tel" id="telefono" name="telefono" pattern="[6789][0-9]{8}" maxlength="9"
-                 title="9 cifras que empiecen por 6, 7, 8 o 9">
-        </div>
-      </fieldset>
+        <fieldset>
+          <legend>Estudios</legend>
 
-      <fieldset>
-        <legend>Estudios</legend>
+          <div class="campo">
+            <label for="ciclo"
+              >Ciclo
+              <span class="obligatorio" aria-hidden="true">*</span></label
+            >
+            <select id="ciclo" name="ciclo" required>
+              <option value="">— Elige una opción —</option>
+              <option value="asir">CFGS ASIR</option>
+              <option value="daw">CFGS DAW</option>
+              <option value="dam">CFGS DAM</option>
+              <option value="smr">CFGM SMR</option>
+            </select>
+          </div>
 
-        <div class="campo">
-          <label for="ciclo">Ciclo <span class="obligatorio" aria-hidden="true">*</span></label>
-          <select id="ciclo" name="ciclo" required>
-            <option value="">— Elige una opción —</option>
-            <option value="asir">CFGS ASIR</option>
-            <option value="daw">CFGS DAW</option>
-            <option value="dam">CFGS DAM</option>
-            <option value="smr">CFGM SMR</option>
-          </select>
-        </div>
+          <div class="campo">
+            <label for="curso"
+              >Curso
+              <span class="obligatorio" aria-hidden="true">*</span></label
+            >
+            <input
+              type="number"
+              id="curso"
+              name="curso"
+              required
+              min="1"
+              max="2"
+              step="1"
+            />
+          </div>
+          <fieldset>
+            <legend>
+              Turno <span class="obligatorio" aria-hidden="true">*</span>
+            </legend>
+            <div class="opcion">
+              <input
+                type="radio"
+                id="turnoM"
+                name="turno"
+                value="manana"
+                required
+              />
+              <label for="turnoM">Mañana</label>
+            </div>
+            <div class="opcion">
+              <input type="radio" id="turnoT" name="turno" value="tarde" />
+              <label for="turnoT">Tarde</label>
+            </div>
+          </fieldset>
+        </fieldset>
 
-        <div class="campo">
-          <label for="curso">Curso <span class="obligatorio" aria-hidden="true">*</span></label>
-          <input type="number" id="curso" name="curso" required min="1" max="2" step="1">
-        </div>
+        <fieldset>
+          <legend>Cuenta de red</legend>
 
-        <p class="etiqueta-grupo">Turno <span class="obligatorio" aria-hidden="true">*</span></p>
+          <div class="campo">
+            <label for="usuario"
+              >Nombre de usuario
+              <span class="obligatorio" aria-hidden="true">*</span></label
+            >
+            <!-- pattern propio 2: empieza por letra; minúsculas, cifras, punto o guion bajo; 4–16 caracteres -->
+            <input
+              type="text"
+              id="usuario"
+              name="usuario"
+              required
+              pattern="[a-z][a-z0-9._]{3,15}"
+              maxlength="16"
+              autocomplete="username"
+              title="De 4 a 16 caracteres: empieza por letra minúscula; solo minúsculas, cifras, punto o guion bajo"
+              aria-describedby="ayudaUsuario"
+            />
+            <small id="ayudaUsuario" class="ayuda"
+              >4–16 caracteres en minúscula. Ejemplo: ruben.rodriguez</small
+            >
+          </div>
+
+          <div class="campo">
+            <label for="cuota"
+              >Espacio en disco solicitado (GB)
+              <span class="obligatorio" aria-hidden="true">*</span></label
+            >
+            <input
+              type="number"
+              id="cuota"
+              name="cuota"
+              required
+              min="1"
+              max="20"
+              step="1"
+              value="5"
+            />
+          </div>
+
+          <div class="campo">
+            <label for="clave"
+              >Contraseña
+              <span class="obligatorio" aria-hidden="true">*</span></label
+            >
+            <input
+              type="password"
+              id="clave"
+              name="clave"
+              required
+              minlength="8"
+              autocomplete="new-password"
+              aria-describedby="ayudaClave"
+            />
+            <small id="ayudaClave" class="ayuda">Mínimo 8 caracteres.</small>
+          </div>
+        </fieldset>
+
         <div class="opcion">
-          <input type="radio" id="turnoM" name="turno" value="manana" required>
-          <label for="turnoM">Mañana</label>
-        </div>
-        <div class="opcion">
-          <input type="radio" id="turnoT" name="turno" value="tarde">
-          <label for="turnoT">Tarde</label>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Cuenta de red</legend>
-
-        <div class="campo">
-          <label for="usuario">Nombre de usuario <span class="obligatorio" aria-hidden="true">*</span></label>
-          <!-- pattern propio 2: empieza por letra; minúsculas, cifras, punto o guion bajo; 4–16 caracteres -->
-          <input type="text" id="usuario" name="usuario" required
-                 pattern="[a-z][a-z0-9._]{3,15}" maxlength="16" autocomplete="username"
-                 title="De 4 a 16 caracteres: empieza por letra minúscula; solo minúsculas, cifras, punto o guion bajo"
-                 aria-describedby="ayudaUsuario">
-          <small id="ayudaUsuario" class="ayuda">4–16 caracteres en minúscula. Ejemplo: ruben.rodriguez</small>
+          <input
+            type="checkbox"
+            id="normas"
+            name="normas"
+            value="aceptadas"
+            required
+          />
+          <label for="normas"
+            >Acepto las normas de uso de la red del centro
+            <span class="obligatorio" aria-hidden="true">*</span></label
+          >
         </div>
 
-        <div class="campo">
-          <label for="cuota">Espacio en disco solicitado (GB) <span class="obligatorio" aria-hidden="true">*</span></label>
-          <input type="number" id="cuota" name="cuota" required min="1" max="20" step="1" value="5">
-        </div>
-
-        <div class="campo">
-          <label for="clave">Contraseña <span class="obligatorio" aria-hidden="true">*</span></label>
-          <input type="password" id="clave" name="clave" required minlength="8"
-                 autocomplete="new-password" aria-describedby="ayudaClave">
-          <small id="ayudaClave" class="ayuda">Mínimo 8 caracteres.</small>
-        </div>
-      </fieldset>
-
-      <div class="opcion">
-        <input type="checkbox" id="normas" name="normas" value="aceptadas" required>
-        <label for="normas">Acepto las normas de uso de la red del centro <span class="obligatorio" aria-hidden="true">*</span></label>
-      </div>
-
-      <button type="submit" class="boton">Solicitar alta</button>
-    </form>
-  </main>
-</body>
+        <button type="submit" class="boton">Solicitar alta</button>
+      </form>
+    </main>
+  </body>
 </html>
